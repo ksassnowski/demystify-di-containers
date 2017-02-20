@@ -2,24 +2,25 @@
 
 namespace Container\Session;
 
+use Container\Logger;
+
 class PhpSessionStorage implements SessionStorage
 {
     /**
-     * @var string
+     * @var Logger
      */
-    private $cookieName;
+    private $logger;
 
     /**
-     * SessionStorage constructor.
+     * PhpSessionStorage constructor.
      *
-     * @param string $cookieName
+     * @param Logger $logger
      */
-    public function __construct($cookieName = 'PHP_SESS_ID')
+    public function __construct(Logger $logger)
     {
-        session_name($cookieName);
+        session_name('PHP_SESS_ID');
         session_start();
-
-        $this->cookieName = $cookieName;
+        $this->logger = $logger;
     }
 
     /**
@@ -30,6 +31,8 @@ class PhpSessionStorage implements SessionStorage
      */
     public function set($key, $value)
     {
+        $this->logger->log("Setting [$key] to [$value]");
+
         $_SESSION[$key] = $value;
     }
 

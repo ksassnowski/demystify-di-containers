@@ -12,6 +12,8 @@ class User
     private $storage;
 
     /**
+     * User constructor.
+     *
      * @param SessionStorage $storage
      */
     public function __construct(SessionStorage $storage)
