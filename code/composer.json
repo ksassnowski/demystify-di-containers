@@ -1,0 +1,15 @@
+{
+    "name": "ks/code",
+    "authors": [
+        {
+            "name": "Kai Sassnowski",
+            "email": "sassnowski@dionera.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Container\\": "src/"
+        }
+    }
+}
