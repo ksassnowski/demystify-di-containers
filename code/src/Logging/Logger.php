@@ -1,6 +1,6 @@
 <?php
 
-namespace Container;
+namespace Container\Logging;
 
 interface Logger
 {

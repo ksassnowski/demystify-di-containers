@@ -2,7 +2,7 @@
 
 namespace Container\Session;
 
-use Container\Logger;
+use Container\Logging\Logger;
 
 class PhpSessionStorage implements SessionStorage
 {
@@ -18,7 +18,6 @@ class PhpSessionStorage implements SessionStorage
      */
     public function __construct(Logger $logger)
     {
-        session_name('PHP_SESS_ID');
         session_start();
         $this->logger = $logger;
     }

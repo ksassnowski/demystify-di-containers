@@ -1,6 +1,6 @@
 <?php
 
-namespace Container;
+namespace Container\Logging;
 
 class DatabaseLogger implements Logger
 {
