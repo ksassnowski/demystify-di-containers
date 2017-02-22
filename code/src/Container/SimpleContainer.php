@@ -6,7 +6,7 @@ namespace Container\Container;
  * An extremely basic implementation of a DI Container that takes
  * advantage of higher-order functions to register bindings.
  */
-class SimpleContainer
+class SimpleContainer implements Container
 {
     /**
      * @var array
@@ -19,7 +19,7 @@ class SimpleContainer
      * @param string   $abstract
      * @param callable $factory
      */
-    public function bind($abstract, callable $factory)
+    public function bind($abstract, $factory)
     {
         $this->bindings[$abstract] = $factory;
     }

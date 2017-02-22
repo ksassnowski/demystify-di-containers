@@ -11,7 +11,7 @@ use ReflectionParameter;
  * at the constructor parameters of the given class and then recursively
  * building all dependencies.
  */
-class ReflectionContainer
+class ReflectionContainer implements Container
 {
     /**
      * @var array
