@@ -2,14 +2,16 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Container\Logging\DatabaseLogger;
 use Container\Models\User;
-use Container\Session\PhpSessionStorage;
+use Container\Logging\Logger;
+use Container\Logging\DatabaseLogger;
 
-$logger = new DatabaseLogger();
-$storage = new PhpSessionStorage($logger);
-$user = new User($storage);
+$container = new \Container\Container\ReflectionContainer();
 
-/** @var User $user */
+$container->bind(Logger::class, DatabaseLogger::class);
+
+$user = $container->get(User::class);
+
+/* @var User $user */
 $user->setLanguage('de');
-echo $user->getLanguage('de');
+echo $user->getLanguage();

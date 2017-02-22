@@ -2,6 +2,7 @@
 
 namespace Container\Session;
 
+use Container\Logging\DatabaseLogger;
 use Container\Logging\Logger;
 
 class PhpSessionStorage implements SessionStorage

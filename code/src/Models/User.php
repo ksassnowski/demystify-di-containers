@@ -2,21 +2,21 @@
 
 namespace Container\Models;
 
-use Container\Session\SessionStorage;
+use Container\Session\PhpSessionStorage;
 
 class User
 {
     /**
-     * @var SessionStorage
+     * @var PhpSessionStorage
      */
     private $storage;
 
     /**
      * User constructor.
      *
-     * @param SessionStorage $storage
+     * @param PhpSessionStorage $storage
      */
-    public function __construct(SessionStorage $storage)
+    public function __construct(PhpSessionStorage $storage)
     {
         $this->storage = $storage;
     }
